@@ -1,8 +1,8 @@
 import React from 'react';
 
 class Register extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       email: '',
       password: '',
@@ -36,7 +36,7 @@ class Register extends React.Component {
       .then(user => {
         if (user.id) {
           this.props.loadUser(user)
-          this.props.onRouteChange('home')
+          this.props.onRouteChange('home');
         }
       })
   }
